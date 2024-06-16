@@ -10,9 +10,7 @@
 
 call plug#begin()
 Plug 'folke/tokyonight.nvim', { 'branch':'main' }
-
 "Plug '/lazy/lazy.nvim'
-
 Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
 Plug 'https://github.com/preservim/nerdtree' " NerdTree
 Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
@@ -27,8 +25,10 @@ Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple c
 Plug 'https://github.com/rstacruz/vim-closer' " For brackets autocompletion
 Plug 'MunifTanjim/nui.nvim'
 Plug 'folke/noice.nvim'
+Plug 'williamboman/mason.nvim'
 Plug 'rcarriga/nvim-notify'
-Plug 'ryanoasis/vim-devicons'
+Plug 'mattn/emmet-vim'
+" Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.6' }
 Plug 'nvim-tree/nvim-web-devicons'
@@ -43,7 +43,7 @@ Plug 'jiangmiao/auto-pairs' "this will auto close ( [ {
 Plug 'yuezk/vim-js'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'maxmellon/vim-jsx-pretty'
-"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Plug 'nvim-treesitter/nvim-treesitter'
 
 set encoding=UTF-8
 
@@ -58,6 +58,7 @@ lua require("nvim-web-devicons").refresh()
 "Опасные действия
 "
 "
+lua require("mason").setup()
 "
 "lua require("lazy").setup(plugins, opts)
 
@@ -69,6 +70,7 @@ lua require("nvim-web-devicons").refresh()
 
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <F2>  :Telescope<CR>
 nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
 
 nmap <F8> :TagbarToggle<CR>
