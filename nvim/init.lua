@@ -1,0 +1,3 @@
+require("kemorial")
+print("hello")
+
